@@ -2,15 +2,7 @@
 
 An interactive 3D virtual gallery built with C++ and OpenFrameworks, where users can browse, view and interact with images and videos displayed on 3D walls. The system automatically extracts metadata from each media object and supports filtering, grouping, and gesture-based navigation.
 
-  | | |
-  |---|---|
-  | ![](docs/gallery.png) | ![](docs/gallery2.png) |
-
----
-
-## Demo
-
-> Video demo and screenshots coming soon.
+  ![Demo](docs/demo.gif)
 
 ---
 
