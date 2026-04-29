@@ -1,0 +1,33 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.aps
+*.ncb
+*.sdf
+*.opensdf
+ipch/
+
+# Compiled objects
+obj/
+*.o
+*.obj
+
+# Binaries (exceto DLLs necessárias ao runtime)
+bin/*.exe
+bin/*.pdb
+bin/*.ilk
+
+# Não ignorar as DLLs necessárias para o projeto correr
+!bin/fmod.dll
+!bin/fmodL.dll
+!bin/FreeImage.dll
+
+# Ficheiros grandes desnecessários
+bin.zip
+bin/data/movies/mixVideo.mp4
+
+# Outros
+*.log
+Thumbs.db
+.DS_Store

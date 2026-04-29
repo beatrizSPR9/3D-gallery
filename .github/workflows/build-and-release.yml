@@ -1,0 +1,60 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'   # dispara quando criares uma tag tipo v1.0, v1.1, etc.
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Descarregar OpenFrameworks
+        run: |
+          curl -L -o of.zip "https://github.com/openframeworks/openFrameworks/releases/download/0.12.0/of_v0.12.0_vs_release.zip"
+          Expand-Archive -Path of.zip -DestinationPath C:\of
+        shell: pwsh
+
+      - name: Copiar projeto para estrutura OF
+        run: |
+          New-Item -ItemType Directory -Force -Path "C:\of\apps\myApps\CmProject"
+          Copy-Item -Recurse -Force "${{ github.workspace }}\*" "C:\of\apps\myApps\CmProject\"
+        shell: pwsh
+
+      - name: Compilar projeto (Release)
+        run: |
+          msbuild "C:\of\apps\myApps\CmProject\CmProject.sln" /p:Configuration=Release /p:Platform=x64 /m
+        shell: pwsh
+
+      - name: Preparar pacote para distribuição
+        run: |
+          New-Item -ItemType Directory -Force -Path "${{ github.workspace }}\release-package"
+          Copy-Item "C:\of\apps\myApps\CmProject\bin\CmProject.exe" "${{ github.workspace }}\release-package\"
+          Copy-Item "C:\of\apps\myApps\CmProject\bin\*.dll" "${{ github.workspace }}\release-package\"
+          Copy-Item -Recurse "C:\of\apps\myApps\CmProject\bin\data" "${{ github.workspace }}\release-package\data"
+          Compress-Archive -Path "${{ github.workspace }}\release-package\*" -DestinationPath "${{ github.workspace }}\3DGallery-Windows.zip"
+        shell: pwsh
+
+      - name: Publicar Release no GitHub
+        uses: softprops/action-gh-release@v2
+        with:
+          files: 3DGallery-Windows.zip
+          name: "3D Gallery ${{ github.ref_name }}"
+          body: |
+            ## 3D Gallery — ${{ github.ref_name }}
+
+            Galeria 3D interativa feita com C++ e OpenFrameworks.
+
+            ### Como usar
+            1. Descarrega o ficheiro `3DGallery-Windows.zip`
+            2. Extrai para uma pasta
+            3. Executa `CmProject.exe`
+
+            **Requisitos:** Windows 10/11 64-bit

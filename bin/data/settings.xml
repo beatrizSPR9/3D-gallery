@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Media_Info>
+	<File_name>DSC09318</File_name>
+	<Duration />
+	<Number_of_cuts />
+	<Luminance_average>206.486</Luminance_average>
+	<Luminance_variance>135.505</Luminance_variance>
+	<Color_average__R_G_B_>206.848, 206.336, 206.928</Color_average__R_G_B_>
+	<Color_variance__R_G_B_>84.2917, 149.794, 208.302</Color_variance__R_G_B_>
+	<Number_of_faces>0</Number_of_faces>
+	<Edge_histogram_average>0.259289, 0.253956, 0.226956, 0.250222, 0.212644</Edge_histogram_average>
+	<Edge_histogram_variance>0.192139, 0.189449, 0.175495, 0.18758, 0.167378</Edge_histogram_variance>
+	<Texture_histogram_Average />
+	<Texture_histogram_variance />
+</Media_Info>
+<Image_Info>
+	<File_name>DSC09318</File_name>
+	<Luminance_average>206.486</Luminance_average>
+	<Luminance_variance>135.505</Luminance_variance>
+	<Color_average__R_G_B_>206.848, 206.336, 206.928</Color_average__R_G_B_>
+	<Color_variance__R_G_B_>84.2917, 149.794, 208.302</Color_variance__R_G_B_>
+	<Number_of_faces>0</Number_of_faces>
+	<Edge_histogram_average>0.259289, 0.253956, 0.226956, 0.250222, 0.212644</Edge_histogram_average>
+	<Edge_histogram_variance>0.192139, 0.189449, 0.175495, 0.18758, 0.167378</Edge_histogram_variance>
+	<Texture_averages>0.673978 0.663789 0.574578 0.843822 0.619278 0.611933 0.796767 0.911333 
+0.710556 0.614756 0.761478 0.884522 0.429844 0.579789 0.469122 0.823144 
+0.583611 0.679089 0.789756 0.878522 0.666544 0.699711 0.786689 0.904433 </Texture_averages>
+	<Texture_variances>0.219713 0.223337 0.244425 0.131788 0.235582 0.237374 0.161854 0.0807686 
+0.205815 0.236754 0.18161 0.10215 0.245091 0.24347 0.249101 0.145574 
+0.24313 0.217836 0.166038 0.106639 0.22229 0.209976 0.167988 0.0864791 </Texture_variances>
+</Image_Info>
+<Settings>
+	<Images>
+		<Images_Filters>
+			<Warm>0</Warm>
+			<Cold>0</Cold>
+			<Luminance>0</Luminance>
+			<Minimum_Texture>0</Minimum_Texture>
+			<Maximum_Texture>1</Maximum_Texture>
+			<Number_of_faces>0</Number_of_faces>
+		</Images_Filters>
+		<Behaviours>
+			<By_temperature>0</By_temperature>
+		</Behaviours>
+	</Images>
+	<Videos>
+		<Videos_Filters>
+			<Duration>0</Duration>
+			<Number_of_cuts>0</Number_of_cuts>
+		</Videos_Filters>
+		<Behaviours>
+			<By_number_of_cuts>0</By_number_of_cuts>
+			<Play_all_videos>0</Play_all_videos>
+		</Behaviours>
+	</Videos>
+</Settings>
