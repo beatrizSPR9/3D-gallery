@@ -88,17 +88,6 @@ src/
 ├── mainPanel           # Main settings panel (filters and behaviors)
 └── userInteractions    # Keyboard input and gesture detection via webcam
 ```
-
-### Class Responsibilities
-
-- **`media`** — Abstract base class with attributes common to images and videos.
-- **`imageMedia` / `videoMedia`** — Subclasses holding type-specific metadata and draw logic.
-- **`mediaMetadata`** — Reads/writes XML files. Creates the file automatically on first run; keypoints/descriptors are always recomputed at startup.
-- **`gallery`** — Manages the media collections, places objects on walls, applies active filters and behaviors.
-- **`mainPanel`** — Renders the filter/behavior control panel using ofxGui.
-- **`mediaInfoPanel`** — Renders the overlay detail view for a selected object.
-- **`userInteractions`** — Handles keyboard events and processes webcam frames for gesture detection (motion delta between consecutive frames, threshold = 25).
-
 ---
 
 ## How It Works
@@ -107,7 +96,7 @@ src/
 On startup, the application configures the 3D environment (camera, lights, walls) and loads all media. For each image/video, it reads the corresponding XML file in `bin/data/xmlFiles/`. If the file does not exist it is created automatically, triggering full metadata extraction. ORB keypoints are always recomputed regardless.
 
 ### Update & Draw
-Each frame, the app checks active filters and rebuilds the visible media list accordingly. If gesture detection is active, it checks for motion in the two detection zones. The scene is then drawn: walls/ceiling/floor as planes, then media objects, then the selected-object overlay if applicable.
+On each frame, the app checks active filters and rebuilds the visible media list accordingly. If gesture detection is active, it checks for motion in the two detection zones. The scene is then drawn: walls/ceiling/floor as planes, then media objects, then the selected-object overlay if applicable.
 
 ### Metadata Algorithms
 
